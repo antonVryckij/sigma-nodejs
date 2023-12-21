@@ -1,0 +1,8 @@
+{
+  "name": "homework-02",
+  "version": "1.0.0",
+  "description": "Simple arithmetic operations using command line arguments",
+  "type": "module",
+  "scripts": {},
+  "author": "Anton Vrutskyi"
+}
