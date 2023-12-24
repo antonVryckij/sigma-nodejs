@@ -1,6 +1,6 @@
 {
   "name": "simple_arithmetic",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple arithmetic operations using command line arguments",
   "type": "module",
   "bin": {
