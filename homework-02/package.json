@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Simple arithmetic operations using command line arguments",
   "type": "module",
+  "bin": {
+    "calculate": "cli.js"
+  },
   "scripts": {},
   "author": "Anton Vrutskyi"
 }
