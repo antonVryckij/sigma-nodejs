@@ -1,5 +1,5 @@
 {
-  "name": "homework-02",
+  "name": "simple_arithmetic",
   "version": "1.0.0",
   "description": "Simple arithmetic operations using command line arguments",
   "type": "module",
