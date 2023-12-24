@@ -1,6 +1,3 @@
-export const checkIsNumbers = (num1, num2) => {
-  const isNum1Number = typeof num1 === "number" && !Number.isNaN(num1);
-  const isNum2Number = typeof num2 === "number" && !Number.isNaN(num2);
+export const convertArgsToNumbers = (args) => args.map(Number);
 
-  return isNum1Number && isNum2Number;
-};
+export const checkIsAllArgsNumber = (numbers) => numbers.every((number) => typeof number === "number" && !Number.isNaN(number))

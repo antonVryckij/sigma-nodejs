@@ -1,14 +1,13 @@
 import { ERROR_MESSAGE } from "./constants.js";
 import * as arithmeticOperations from "./arithmeticOperations.js";
-import { checkIsNumbers } from "./utils.js";
+import {checkIsAllArgsNumber, convertArgsToNumbers} from "./utils.js";
 
-export const calculate = (arithmeticOperationType, arg1, arg2) => {
-  const num1 = Number(arg1);
-  const num2 = Number(arg2);
+export const calculate = (arithmeticOperationType, args) => {
+  const argsAsNumbers = convertArgsToNumbers(args)
 
-  const isNumbers = checkIsNumbers(num1, num2);
+  const isAllArgsNumbers = checkIsAllArgsNumber(argsAsNumbers)
 
-  if (!isNumbers) {
+  if (!isAllArgsNumbers) {
     console.log(ERROR_MESSAGE.ISNT_NUMBER);
     return;
   }
@@ -20,5 +19,5 @@ export const calculate = (arithmeticOperationType, arg1, arg2) => {
     return;
   }
 
-  return arithmeticOperation(num1, num2);
+  return arithmeticOperation(argsAsNumbers);
 };

@@ -1,7 +1,7 @@
 import { calculate } from "./src/calculate.js";
 
-const [, , arithmeticOperationType, arg1, arg2] = process.argv;
+const [, , arithmeticOperationType, ...args] = process.argv;
 
-const result = calculate(arithmeticOperationType, arg1, arg2);
+const result = calculate(arithmeticOperationType, args);
 
 console.log(result);
