@@ -1,7 +1,25 @@
-import { calculate } from "./src/calculate.js";
+import { ERROR_MESSAGE } from "./src/constants.js";
+import * as arithmeticOperations from "./src/arithmeticOperations.js";
+import {checkIsAllArgsNumber, convertArgsToNumbers} from "./src/utils.js";
 
-const [, , arithmeticOperationType, ...args] = process.argv;
+const calculate = (arithmeticOperationType, args) => {
+  const argsAsNumbers = convertArgsToNumbers(args)
 
-const result = calculate(arithmeticOperationType, args);
+  const isAllArgsNumbers = checkIsAllArgsNumber(argsAsNumbers)
 
-console.log(result);
+  if (!isAllArgsNumbers) {
+    console.log(ERROR_MESSAGE.ISNT_NUMBER);
+    return;
+  }
+
+  const arithmeticOperation = arithmeticOperations[arithmeticOperationType];
+
+  if (!arithmeticOperation) {
+    console.log(ERROR_MESSAGE.DONT_SUPPORT);
+    return;
+  }
+
+  return arithmeticOperation(argsAsNumbers);
+};
+
+export default calculate;
